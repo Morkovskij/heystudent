@@ -11,7 +11,7 @@
 				</select>
 
 				<input type="hidden" ng-model="selectedCourse">
-				<div class="uk-button-group tm-filter-param" data-uk-button-radio>
+				<div class="uk-button-group tm-filter-param tm-button-group" data-uk-button-radio>
 					<button class="uk-button uk-button-large"
 							ng-repeat="course in courses"
 							ng-click="$parent.selectedCourse = course.id; updateGroups()"
@@ -24,7 +24,7 @@
 					<option ng-repeat="group in groups" value="{{group.id}}">{{ group.title }}</option>
 				</select>
 
-				<input type="submit" class="uk-button uk-button-primary uk-button-large uk-border-rounded tm-filter-param" value="Показать" ng-click="showSchedule()" ng-disabled="groups.length == 0 || selectedGroup == undefined">
+				<button class="uk-button uk-button-primary uk-button-large uk-border-rounded tm-button tm-filter-param" ng-click="showSchedule()" ng-disabled="groups.length == 0 || selectedGroup == undefined">Показать</button>
 		    </fieldset>
 
 		</form>

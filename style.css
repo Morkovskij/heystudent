@@ -5,6 +5,11 @@ html {
     overflow-y: scroll;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #EEF2F5;
+}
+
+body {
+	
 }
 
 /*
@@ -12,15 +17,24 @@ html {
  */
 
 .tm-navbar {
-    padding: 15px 0;
+    padding: 20px 0;
     border: none;
-    background: #fff;
+    background: #344563;
+}
+
+.tm-navbar-nav {
+	margin-left: 190px;
 }
 
 .tm-navbar-brand {
-	width: 160px;
-	height: 40px;
-	background: url("logo.svg") center no-repeat;
+	position: absolute;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    top: 0px;
+    width: 180px;
+    height: 70px;
+    background: url("logo.svg") center no-repeat;
+    background-color: #5DB8F1;
 }
 
 .tm-navbar-brand-off {
@@ -32,14 +46,39 @@ html {
 	vertical-align: middle;
 }
 
+.tm-navbar .uk-navbar-nav li {
+	margin: 0 15px;
+}
+
 .tm-navbar .uk-navbar-nav li a {
+	display: inline-block;
+	padding: 0;
 	box-shadow: none;
 	border: none;
+	height: 30px;
+	line-height: 30px;
+
+	font-size: 16px;
+	color: #fff;
+	border-bottom: 2px solid transparent;
+
+	-webkit-transition: border .2s;
+	-o-transition: border .2s;
+	transition: border .2s;
+}
+
+.tm-navbar .uk-navbar-nav li a:hover {
+	background: transparent;
+	border-bottom: 2px solid #5DB8F1;
+}
+.tm-navbar .uk-navbar-nav li a:focus {
+	background: transparent;
 }
 
 .tm-filter {
 	padding: 20px 0;
-	background: #f7f7f7;
+	background: #fff;
+	box-shadow: 0px 0px 3px 0px rgb(173, 173, 173);
 }
 
 .tm-filter-param {
@@ -48,4 +87,56 @@ html {
 
 .tm-day {
 	margin: 20px 0;
+}
+
+.uk-form input:not([type]), .uk-form input[type=text], .uk-form input[type=password], .uk-form input[type=email], .uk-form input[type=url], .uk-form input[type=search], .uk-form input[type=tel], .uk-form input[type=number], .uk-form input[type=datetime], .uk-form input[type=datetime-local], .uk-form input[type=date], .uk-form input[type=month], .uk-form input[type=time], .uk-form input[type=week], .uk-form input[type=color], .uk-form select, .uk-form textarea {
+	border: 2px solid #f0f0f0;
+	-webkit-transition: border .2s;
+	-o-transition: border .2s;
+	transition: border .2s;
+}
+
+.uk-form input:not([type]):focus, .uk-form input[type=text]:focus, .uk-form input[type=password]:focus, .uk-form input[type=email]:focus, .uk-form input[type=url]:focus, .uk-form input[type=search]:focus, .uk-form input[type=tel]:focus, .uk-form input[type=number]:focus, .uk-form input[type=datetime]:focus, .uk-form input[type=datetime-local]:focus, .uk-form input[type=date]:focus, .uk-form input[type=month]:focus, .uk-form input[type=time]:focus, .uk-form input[type=week]:focus, .uk-form input[type=color]:focus, .uk-form select:focus, .uk-form textarea:focus {
+    border-color: #5DB8F1;
+    outline: 0;
+    background: #fff;
+    color: #444;
+}
+
+.tm-button-group {
+
+}
+
+.tm-button-group .uk-button {
+	-webkit-transition: background-color .2s, color .2s;
+	-o-transition: background-color .2s, color .2s;
+	transition: background-color .2s, color .2s;
+}
+
+.tm-button-group .uk-button:hover {
+	background-color: #d8d8d8;
+}
+
+.tm-button-group .uk-button.uk-active,
+.tm-button-group .uk-button:active {
+	background-color: #5DB8F1;
+	color: #fff;
+}
+
+.tm-button-group .uk-button:first-child {
+	border-radius: 5px 0 0 5px;
+}
+
+.tm-button-group .uk-button:last-child {
+	border-radius: 0 5px 5px 0;
+}
+
+.tm-button {
+	-webkit-transition: background-color .2s;
+	-o-transition: background-color .2s;
+	transition: background-color .2s;
+}
+
+.uk-button-primary {
+	background-color: #5DB8F1;
 }
