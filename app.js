@@ -1,4 +1,54 @@
 var grsuControllers = angular.module('grsuControllers', []);
+var grsuFilters = angular.module('grsuFilters', []);
+
+grsuFilters.filter('scheduleDay', ['$filter', function($filter){
+	return function(input, uppercase) {
+		input = input || '';
+
+		day = new Date(input).getDay();
+
+		days = [
+			'Воскресенье',
+			'Понедельник',
+			'Вторник',
+			'Среда',
+			'Четверг',
+			'Пятница',
+			'Суббота'
+		];
+
+		return days[day];
+	};
+}]);
+
+grsuFilters.filter('scheduleDate', ['$filter', function($filter){
+	return function(input, uppercase) {
+		input = input || '';
+
+		input = new Date(input);
+
+		date = input.getDate();
+		month = input.getMonth();
+		year = input.getFullYear();
+
+		var months = [
+			'Января',
+			'Февраля',
+			'Марта',
+			'Апреля',
+			'Мая',
+			'Июня',
+			'Июля',
+			'Августа',
+			'Сентября',
+			'Октября',
+			'Ноября',
+			'Декабря'
+		];
+
+		return date + ' ' + months[month] + ' ' + year;
+	};
+}]);
 
 grsuControllers.controller('TeachersCtrl', ['$scope', '$http', 'API', function($scope, $http, API) {
 
@@ -71,7 +121,8 @@ grsuControllers.controller('ScheduleCtrl', ['$scope', '$http', 'API', function($
 
 var grsuApp = angular.module('grsuApp', [
   'ngRoute',
-  'grsuControllers'
+  'grsuControllers',
+  'grsuFilters'
 ]);
 
 grsuApp.constant('API', (function() {

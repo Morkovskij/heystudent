@@ -30,3 +30,7 @@ html {
 .tm-filter-param {
 	margin-right: 20px !important;
 }
+
+.tm-day {
+	margin: 20px 0;
+}
