@@ -1,18 +1,19 @@
+<div class="uk-container uk-container-center">
 <h2>Преподаватели</h2>
 <p>Список преподавателей ГрГУ им. Янки Купалы.</p>
 <hr>
 <div class="form-group pull-left">
   <input ng-model="searchFilter" type="text" class="form-control" id="search" placeholder="Поиск">
 </div>
-<table class="table">
+<table class="uk-table uk-table-striped">
   <thead>
     <tr>
-      <th>
+      <th class="uk-width-1-3">
         <a href="" ng-click="order('surname')">ФИО</a>
         <span class="caret" ng-show="predicate === 'surname'" ng-class="{reverse:reverse}"></span>
       </th>
-      <th>Должность</th>
-      <th>Email</th>
+      <th class="uk-width-1-3">Должность</th>
+      <th class="uk-width-1-3">Email</th>
     </tr>
   </thead>
   <tbody>
@@ -23,3 +24,4 @@
     </tr>
   </tbody>
 </table>
+</div>

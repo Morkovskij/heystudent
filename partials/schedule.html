@@ -11,8 +11,8 @@
 				</select>
 
 				<input type="hidden" ng-model="selectedCourse">
-				<div class="uk-button-group">
-					<button class="uk-button"
+				<div class="uk-button-group" data-uk-button-radio>
+					<button class="uk-button uk-button-large"
 							ng-repeat="course in courses"
 							ng-click="$parent.selectedCourse = course.id; updateGroups()"
 							ng-value="{{course.id}}"
@@ -35,21 +35,21 @@
 	<div class="uk-container uk-container-center">
 		<div class="day" ng-repeat="day in schedule.days">
 			<h2>{{ day.date }}</h2>
-			<table class="uk-table">
+			<table class="uk-table uk-table-striped uk-table-middle">
 				<thead>
 				<tr>
-					<th>Время</th>
-					<th>Предмет</th>
-					<th>Преподаватель</th>
-					<th>Информация</th>
+					<th class="uk-width-1-10">Время</th>
+					<th class="uk-width-3-10">Предмет</th>
+					<th class="uk-width-3-10 uk-text-right">Преподаватель</th>
+					<th class="uk-width-3-10 uk-text-right">Информация</th>
 				</tr>
 				</thead>
 				<tbody>
 				<tr ng-repeat="lesson in day.lessons">
-				<td> {{ lesson.timeStart }}-{{ lesson.timeEnd }} </td>
-				<td> {{ lesson.type }} {{ lesson.title }} </td>
-				<td> {{ lesson.teacher.fullname }} </td>
-				<td> {{ lesson.address }} </br>Кабинет: {{ lesson.room }} </td>
+				<td class=""> {{ lesson.timeStart }}-{{ lesson.timeEnd }} </td>
+				<td class="uk-text-bold"> {{ lesson.type }} {{ lesson.title }} </td>
+				<td class="uk-text-right"> {{ lesson.teacher.fullname }} </td>
+				<td class="uk-text-right"> {{ lesson.address }} </br>Кабинет: {{ lesson.room }} </td>
 				</tr>
 				</tbody>
 			</table>
