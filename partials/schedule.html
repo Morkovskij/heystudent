@@ -34,8 +34,8 @@
 <div ng-if="show == true">
 	<div class="uk-container uk-container-center">
 		<div class="tm-day" ng-repeat="day in schedule.days">
-			<h3 class="uk-h3">{{ day.date | scheduleDay }} / {{ day.date | scheduleDate }}</h3>
-			<table class="uk-table uk-table-striped uk-table-middle">
+			<h3 class="uk-h3 tm-day-head">{{ day.date | scheduleDay }} / {{ day.date | scheduleDate }}</h3>
+			<table class="uk-table uk-table-middle tm-table">
 				<thead>
 				<tr>
 					<th class="uk-width-1-10">Время</th>
