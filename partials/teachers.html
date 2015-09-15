@@ -1,27 +1,31 @@
-<div class="uk-container uk-container-center">
-<h2>Преподаватели</h2>
-<p>Список преподавателей ГрГУ им. Янки Купалы.</p>
-<hr>
-<div class="form-group pull-left">
-  <input ng-model="searchFilter" type="text" class="form-control" id="search" placeholder="Поиск">
+<div class="tm-filter">
+  <div class="uk-container uk-container-center">
+    <form class="uk-form">
+      <fieldset>
+        <input ng-model="searchFilter" type="text" class="uk-form-large uk-form-width-medium tm-filter-param" id="search" placeholder="Поиск">
+      </fieldset>
+    </form>
+  </div>
 </div>
-<table class="uk-table uk-table-striped">
-  <thead>
-    <tr>
-      <th class="uk-width-1-3">
-        <a href="" ng-click="order('surname')">ФИО</a>
-        <span class="caret" ng-show="predicate === 'surname'" ng-class="{reverse:reverse}"></span>
-      </th>
-      <th class="uk-width-1-3">Должность</th>
-      <th class="uk-width-1-3">Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="teacher in teachers | orderBy:predicate:reverse" ng-show="([teacher] | filter:searchFilter).length > 0">
-      <td>{{ teacher.surname }} {{ teacher.name }} {{ teacher.patronym }}</td>
-      <td>{{ teacher.post }}</td>
-      <td><a href="mailto:{{ teacher.email | lowercase }}">{{ teacher.email | lowercase }}</a> <span ng-if="teacher.email ==''" class="text-muted">Уточняйте</span></td>
-    </tr>
-  </tbody>
-</table>
+
+<div class="uk-container uk-container-center">
+  <table class="uk-table uk-table-striped">
+    <thead>
+      <tr>
+        <th class="uk-width-1-3">
+          <a href="" ng-click="order('surname')">ФИО</a>
+          <span class="caret" ng-show="predicate === 'surname'" ng-class="{reverse:reverse}"></span>
+        </th>
+        <th class="uk-width-1-3">Должность</th>
+        <th class="uk-width-1-3">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="teacher in teachers | orderBy:predicate:reverse" ng-show="([teacher] | filter:searchFilter).length > 0">
+        <td>{{ teacher.surname }} {{ teacher.name }} {{ teacher.patronym }}</td>
+        <td>{{ teacher.post }}</td>
+        <td><a href="mailto:{{ teacher.email | lowercase }}">{{ teacher.email | lowercase }}</a> <span ng-if="teacher.email ==''" class="text-muted">Уточняйте</span></td>
+      </tr>
+    </tbody>
+  </table>
 </div>

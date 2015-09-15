@@ -17,7 +17,16 @@ html {
     background: #fff;
 }
 
+.tm-navbar .uk-navbar-nav li a {
+	box-shadow: none;
+	border: none;
+}
+
 .tm-filter {
 	padding: 20px 0;
 	background: #f7f7f7;
+}
+
+.tm-filter-param {
+	margin-right: 20px !important;
 }

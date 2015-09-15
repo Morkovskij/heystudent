@@ -29,6 +29,7 @@ grsuControllers.controller('ScheduleCtrl', ['$scope', '$http', 'API', function($
 	];
 	$scope.groups = [];
 	$scope.schedule = [];
+	$scope.show = false;
 
 	$http.get(API.GET.FACULTIES).success(function(response) {
 		$scope.faculties = response.items;
@@ -104,7 +105,7 @@ grsuApp.config(['$routeProvider',
 		title: 'Расписание'
 	}).
 	otherwise({
-		redirectTo: '/teachers'
+		redirectTo: '/schedule'
 	});
 }]);
 

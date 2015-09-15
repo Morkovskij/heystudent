@@ -3,15 +3,15 @@
 		<form class="uk-form">
 
 		    <fieldset>
-		        <select ng-model="selectedFaculty" ng-change="updateGroups()" class="uk-form-large uk-form-width-medium">
+		        <select ng-model="selectedFaculty" ng-change="updateGroups()" class="uk-form-large uk-form-width-medium tm-filter-param">
 					<option ng-repeat="faculty in faculties" value="{{faculty.id}}">{{ faculty.title }}</option>
 				</select>
-				<select ng-model="selectedDepartment" ng-change="updateGroups()" class="uk-form-large uk-form-width-medium">
+				<select ng-model="selectedDepartment" ng-change="updateGroups()" class="uk-form-large uk-form-width-medium tm-filter-param">
 					<option ng-repeat="department in departments" value="{{department.id}}">{{ department.title }}</option>
 				</select>
 
 				<input type="hidden" ng-model="selectedCourse">
-				<div class="uk-button-group" data-uk-button-radio>
+				<div class="uk-button-group tm-filter-param" data-uk-button-radio>
 					<button class="uk-button uk-button-large"
 							ng-repeat="course in courses"
 							ng-click="$parent.selectedCourse = course.id; updateGroups()"
@@ -20,11 +20,11 @@
 
 				</div>
 
-				<select ng-model="selectedGroup" ng-disabled="groups.length == 0" class="uk-form-large uk-form-width-medium">
+				<select ng-model="selectedGroup" ng-disabled="groups.length == 0" class="uk-form-large uk-form-width-medium tm-filter-param">
 					<option ng-repeat="group in groups" value="{{group.id}}">{{ group.title }}</option>
 				</select>
 
-				<input type="submit" class="uk-button uk-button-primary uk-button-large" value="Показать" ng-click="showSchedule()" ng-disabled="groups.length == 0 || selectedGroup == undefined">
+				<input type="submit" class="uk-button uk-button-primary uk-button-large uk-border-rounded tm-filter-param" value="Показать" ng-click="showSchedule()" ng-disabled="groups.length == 0 || selectedGroup == undefined">
 		    </fieldset>
 
 		</form>
@@ -55,4 +55,8 @@
 			</table>
 		</div>
 	</div>
+</div>
+
+<div ng-if="show == false">
+	<p class="uk-text-large uk-text-center" style="margin-top:50px;">Нет расписания для отображения</p>
 </div>
