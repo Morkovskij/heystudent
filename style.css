@@ -17,6 +17,21 @@ html {
     background: #fff;
 }
 
+.tm-navbar-brand {
+	width: 160px;
+	height: 40px;
+	background: url("logo.svg") center no-repeat;
+}
+
+.tm-navbar-brand-off {
+	display: inline-block;
+	width: 90px;
+	height: 28px;
+	background: url("logo.svg") center no-repeat;
+	background-size: 90px 28px;
+	vertical-align: middle;
+}
+
 .tm-navbar .uk-navbar-nav li a {
 	box-shadow: none;
 	border: none;
