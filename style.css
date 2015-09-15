@@ -16,3 +16,8 @@ html {
     border: none;
     background: #fff;
 }
+
+.tm-filter {
+	padding: 15px 0;
+	background: #f7f7f7;
+}
