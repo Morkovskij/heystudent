@@ -1,0 +1,18 @@
+/* Base
+ ========================================================================== */
+
+html {
+    overflow-y: scroll;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+ * Navbar
+ */
+
+.tm-navbar {
+    padding: 15px 0;
+    border: none;
+    background: #fff;
+}

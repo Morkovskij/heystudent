@@ -1,0 +1,48 @@
+<div class="tm-filter">
+<form class="uk-form">
+
+    <fieldset>
+        <select ng-model="selectedFaculty" ng-change="updateGroups()">
+			<option ng-repeat="faculty in faculties" value="{{faculty.id}}">{{ faculty.title }}</option>
+		</select>
+		<select ng-model="selectedDepartment" ng-change="updateGroups()">
+			<option ng-repeat="department in departments" value="{{department.id}}">{{ department.title }}</option>
+		</select>
+
+		<span ng-repeat="course in courses">
+			<input name="course" ng-model="$parent.selectedCourse" value="{{ course.id }}" ng-change="updateGroups()" type="radio">{{ course.title }}
+		</span>
+
+		<select ng-model="selectedGroup" ng-disabled="groups.length == 0">
+			<option ng-repeat="group in groups" value="{{group.id}}">{{ group.title }}</option>
+		</select>
+
+		<input type="submit" class="btn btn-primary" value="Показать" ng-click="showSchedule()" ng-disabled="groups.length == 0 || selectedGroup == undefined">
+    </fieldset>
+
+</form>
+
+<div ng-if="show == true">
+	<div class="day" ng-repeat="day in schedule.days">
+		<h2>{{ day.date }}</h2>
+		<table class="uk-table">
+			<thead>
+			<tr>
+				<th>Время</th>
+				<th>Предмет</th>
+				<th>Преподаватель</th>
+				<th>Информация</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="lesson in day.lessons">
+			<td> {{ lesson.timeStart }}-{{ lesson.timeEnd }} </td>
+			<td> {{ lesson.type }} {{ lesson.title }} </td>
+			<td> {{ lesson.teacher.fullname }} </td>
+			<td> {{ lesson.address }} </br>Кабинет: {{ lesson.room }} </td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</div>
