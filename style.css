@@ -19,22 +19,17 @@ body {
 .tm-navbar {
     padding: 20px 0;
     border: none;
-    background: #344563;
+    background: #5DB8F1;
 }
 
 .tm-navbar-nav {
-	margin-left: 190px;
+
 }
 
 .tm-navbar-brand {
-	position: absolute;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    top: 0px;
     width: 180px;
-    height: 70px;
+    height: 40px;
     background: url("logo.svg") center no-repeat;
-    background-color: #5DB8F1;
 }
 
 .tm-navbar-brand-off {
@@ -47,7 +42,7 @@ body {
 }
 
 .tm-navbar .uk-navbar-nav li {
-	margin: 0 15px;
+	margin: 5px 15px;
 }
 
 .tm-navbar .uk-navbar-nav li a {
@@ -69,7 +64,7 @@ body {
 
 .tm-navbar .uk-navbar-nav li a:hover {
 	background: transparent;
-	border-bottom: 2px solid #5DB8F1;
+	border-bottom: 2px solid #fff;
 }
 .tm-navbar .uk-navbar-nav li a:focus {
 	background: transparent;
